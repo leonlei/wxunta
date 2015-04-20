@@ -33,7 +33,7 @@ public class MenuManager {
 //            }
 //        }  
 		
-		WeixinUtil.getRespText(new String("»Ø¼Ò".getBytes("UTF-8")));
+		WeixinUtil.getRespText(new String("2".getBytes("UTF-8")));
     }  
   
     /** 

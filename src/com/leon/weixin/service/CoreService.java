@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import com.leon.weixin.util.MessageUtil;
+import com.leon.weixin.util.WeixinUtil;
 import com.leon.weixin.util.resp.TextMessage;
 
 public class CoreService {
@@ -42,7 +43,15 @@ public class CoreService {
   
             // 文本消息  
             if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)) {  
-                respContent = "您发送的是文本消息！";  
+                //respContent = "您发送的是文本消息！";
+            	String content = requestMap.get("Content");
+//            	if(content != null){
+//            		String repText =  WeixinUtil.getRespText(new String(content.getBytes("UTF-8")));
+//            		respContent = repText;
+//            	}
+        		String repText =  WeixinUtil.getRespText(new String(content.getBytes("UTF-8")));
+        		respContent = repText;
+            	
             }  
             // 图片消息  
             else if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_IMAGE)) {  

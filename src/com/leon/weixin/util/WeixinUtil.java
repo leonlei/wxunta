@@ -154,7 +154,8 @@ public class WeixinUtil {
     public static String getRespText(String text){
     	String url = siri_api_url.replace("INFO", text);
     	JSONObject jsonObject = httpRequest(url,"GET", null);
-    	System.out.println(jsonObject);
-    	return null;
+    	String respText =  jsonObject.getString("text");
+    	System.out.println(respText);
+    	return respText;
     }
 }  
